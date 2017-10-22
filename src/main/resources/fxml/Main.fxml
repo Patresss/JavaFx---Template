@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXRippler?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.web.WebView?>
+
+<StackPane fx:id="root" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.inf.store.gui.controller.MainController">
+   <BorderPane>
+      <top>
+            <JFXToolbar fx:id="title" BorderPane.alignment="CENTER">
+                <leftItems>
+                    <JFXRippler maskType="CIRCLE" style="-fx-ripple-color:WHITE;">
+                        <control>
+                            <StackPane fx:id="titleBurgerContainer" />
+                        </control>
+                    </JFXRippler>
+                    <Label text="%application.name" />
+                </leftItems>
+                <rightItems>
+                    <JFXRippler fx:id="optionsRippler" maskType="CIRCLE" style="-fx-ripple-color:WHITE;">
+                        <control>
+                            <StackPane fx:id="optionsBurger">
+                                <children>
+                                    <JFXHamburger styleClass="jfx-options-burger" />
+                                </children>
+                            </StackPane>
+                        </control>
+                    </JFXRippler>
+                </rightItems>
+            </JFXToolbar>
+      </top>
+      <center>
+            <JFXTabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                <tabs>
+                    <Tab text="%games.myGames">
+                        <content>
+                            <!-- Header -->
+                            <BorderPane>
+                        <left>
+                           <JFXListView fx:id="gamesListView" minWidth="-Infinity" prefWidth="200.0" styleClass="game-list" BorderPane.alignment="CENTER" />
+                        </left>
+                        <center>
+                           <WebView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                        </center>
+                            </BorderPane>
+                        </content>
+                    </Tab>
+                    <Tab text="%shop.title">
+                        <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                    </Tab>
+               <Tab text="%settings.title">
+                  <content>
+                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+               </Tab>
+                </tabs>
+            </JFXTabPane>
+      </center>
+   </BorderPane>
+
+</StackPane>
