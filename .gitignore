@@ -82,6 +82,7 @@ classes/
 # Package Files
 ######################
 *.jar
+!store.jar
 *.war
 *.ear
 *.db
